@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rad Lanches — Cardápio</title>
-  <meta name="description" content="Rad Lanches – Hambúrgueres artesanais e lanches. Delivery rápido. Peça pelo WhatsApp!" />
+  <title>Rad Lanches — Cardápio Oficial</title>
+  <meta name="description" content="Rad Lanches – Hamburgueria artesanal e lanches. Delivery rápido em Tietê/SP. Peça pelo WhatsApp!" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -17,12 +17,16 @@
     <div class="header-inner">
       <div class="brand">
         <img
-          src="assets/logo.jpg"
+          src="assets/logo-transparent.png"
           alt="Rad Lanches"
           class="brand-logo"
           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
         />
-        <div class="brand-logo-fallback" style="display:none">🍔</div>
+        <div class="brand-logo-fallback" style="display:none">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 11a8 8 0 0 1 16 0H4z"/><path d="M4 14h16"/><path d="M5 18h14a2 2 0 0 1 2 2H3a2 2 0 0 1 2-2z"/>
+          </svg>
+        </div>
         <div class="brand-info">
           <span class="brand-name">RAD LANCHES</span>
           <span class="brand-sub">Delivery via WhatsApp</span>
@@ -38,18 +42,26 @@
     </div>
   </header>
 
-  <!-- ===== HERO ===== -->
+  <!-- ===== HERO COM WATERMARK LOGO DE FUNDO ===== -->
   <section class="hero">
+    <div class="hero-bg-logo" aria-hidden="true">
+      <img src="assets/logo-transparent.png" alt="Rad Lanches Watermark" />
+    </div>
     <div class="hero-inner">
-      <p class="hero-tag">🏍️ Produção Limitada, Sabor Garantido!</p>
+      <p class="hero-tag">
+        <svg class="tag-icon" viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
+          <path d="M12 23c-4.97 0-9-4.03-9-9 0-3.9 2.5-7.75 6-11 .8 1.5 2.1 2.8 3.5 3.5-1 2.5.5 4.5 2 5.5 1.5-2 1.5-4 1-6 2.5 2 5.5 5.5 5.5 8 0 4.97-4.03 9-9 9z"/>
+        </svg>
+        <span>Produção Limitada, Sabor Garantido!</span>
+      </p>
       <h1 class="hero-title">O SABOR QUE<br/><span class="accent">ASSOMBRA</span><br/>SUA FOME</h1>
       <p class="hero-sub">Lanches artesanais feitos com capricho. Escolha, monte e manda o zap!</p>
       <div class="hero-info">
         <div class="hero-badge">
-          🛵 <span><strong>Delivery rápido</strong> · Tietê/SP</span>
-        </div>
-        <div class="hero-badge">
-          📦 <span>Pedido mínimo: <strong>2 lanches</strong></span>
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="18.5" cy="17.5" r="3.5"/><circle cx="5.5" cy="17.5" r="3.5"/><path d="M15 6h-3l-2.5 7h5.5l2-4h3.5"/><path d="M9 13H5.5L7 9h4"/>
+          </svg>
+          <span><strong>Delivery rápido</strong> · Tietê/SP</span>
         </div>
       </div>
     </div>
@@ -64,7 +76,7 @@
 
   <!-- ===== MENU PRINCIPAL ===== -->
   <main class="menu-main" id="menuMain">
-    <!-- Seções geradas pelo JS -->
+    <!-- Seções geradas dinamicamente com Glass Cards e SVGs -->
   </main>
 
   <!-- ===== OVERLAY ===== -->
@@ -83,7 +95,12 @@
 
     <div class="cart-body" id="cartBody">
       <div class="cart-empty" id="cartEmpty">
-        <div class="cart-empty-icon">🛒</div>
+        <div class="cart-empty-icon">
+          <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+          </svg>
+        </div>
         <p>Seu carrinho está vazio</p>
         <span>Adicione itens do cardápio para começar</span>
       </div>
@@ -91,9 +108,6 @@
     </div>
 
     <div class="cart-foot" id="cartFoot">
-      <div class="cart-min-order">
-        📦 Pedido mínimo de 2 lanches para delivery
-      </div>
       <div class="totals">
         <div class="totals-row">
           <span>Subtotal</span>
@@ -115,7 +129,7 @@
     </div>
   </aside>
 
-  <!-- ===== MODAL DE CHECKOUT ===== -->
+  <!-- ===== MODAL DE CHECKOUT COM ORDERBUMP ===== -->
   <div class="modal-overlay" id="modalOverlay">
     <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
       <div class="modal-head">
@@ -128,8 +142,38 @@
       </div>
 
       <div class="modal-body">
+        <!-- Resumo do Pedido -->
         <div class="order-summary" id="orderSummary"></div>
 
+        <!-- 🥤 ORDERBUMP REFRIGERANTE -->
+        <div class="orderbump-card" id="orderbumpCard">
+          <div class="ob-badge">
+            <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor">
+              <path d="M12 23c-4.97 0-9-4.03-9-9 0-3.9 2.5-7.75 6-11 .8 1.5 2.1 2.8 3.5 3.5-1 2.5.5 4.5 2 5.5 1.5-2 1.5-4 1-6 2.5 2 5.5 5.5 5.5 8 0 4.97-4.03 9-9 9z"/>
+            </svg>
+            OFERTA ESPECIAL DE CHECKOUT
+          </div>
+          <div class="ob-main">
+            <div class="ob-icon">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M7 4h10l-1.2 16a2 2 0 0 1-2 1.8h-3.6a2 2 0 0 1-2-1.8L7 4z"/>
+                <path d="M6 8h12"/>
+                <path d="M10 4l2-2.5h3"/>
+              </svg>
+            </div>
+            <div class="ob-info">
+              <p class="ob-title">Vai um Refri geladinho?</p>
+              <p class="ob-desc">Lata 350ml por apenas <strong class="ob-price">R$ 5,90</strong></p>
+            </div>
+            <label class="ob-switch" for="orderbumpCheck" aria-label="Adicionar refrigerante ao pedido">
+              <input type="checkbox" id="orderbumpCheck" />
+              <span class="ob-slider"></span>
+            </label>
+          </div>
+          <p class="ob-hint">✓ Escolha o sabor (Coca-Cola, Guaraná ou Fanta) na confirmação</p>
+        </div>
+
+        <!-- Formulário de Entrega e Pagamento -->
         <div class="form-section">
           <div class="form-group">
             <label for="addressInput">
@@ -151,10 +195,10 @@
               Forma de Pagamento
             </label>
             <select id="paymentSelect" class="form-select">
-              <option value="Pix">💚 Pix</option>
-              <option value="Dinheiro">💵 Dinheiro</option>
-              <option value="Cartão de Crédito">💳 Cartão de Crédito</option>
-              <option value="Cartão de Débito">💳 Cartão de Débito</option>
+              <option value="Pix">Pix (Chave enviada no WhatsApp)</option>
+              <option value="Dinheiro">Dinheiro (Informe se precisa de troco)</option>
+              <option value="Cartão de Crédito">Cartão de Crédito (Máquina na entrega)</option>
+              <option value="Cartão de Débito">Cartão de Débito (Máquina na entrega)</option>
             </select>
           </div>
         </div>
@@ -167,7 +211,7 @@
           </svg>
           Enviar Pedido no WhatsApp
         </button>
-        <p class="modal-hint">Você será redirecionado ao WhatsApp da Rad Lanches com seu pedido pronto.</p>
+        <p class="modal-hint">Você será redirecionado ao WhatsApp da Rad Lanches com o pedido formatado.</p>
       </div>
     </div>
   </div>
